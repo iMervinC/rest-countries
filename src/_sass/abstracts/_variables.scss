@@ -1,0 +1,21 @@
+:root {
+  --DarkModeElements: #2b3945;
+  --DarkModeBG: #202c37;
+  --LightModeInput: hsl(0, 0%, 52%);
+  --LightModeText: #111517;
+  --LightModeBkg: #fafafa;
+  //Dark Mode Text || Light Mode Element
+  --White: #ffffff;
+}
+
+.dark {
+  --bg: var(--DarkModeBG);
+  --element: var(--DarkModeElements);
+  --text: var(--White);
+}
+
+.light {
+  --bg: var(--LightModeBkg);
+  --element: var(--White);
+  --text: var(--LightModeText);
+}

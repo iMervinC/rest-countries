@@ -6,16 +6,28 @@
   --LightModeBkg: #fafafa;
   //Dark Mode Text || Light Mode Element
   --White: #ffffff;
+  --RoyalBlue: #00296b;
+  --CornFlowerBlue: #003f88;
+  --USAFABlue: #00509d;
+  --Pink: #f72585;
+  --Byzatine: #b5179e;
+  --Purple: #7209b7;
 }
 
 .dark {
   --bg: var(--DarkModeBG);
   --element: var(--DarkModeElements);
   --text: var(--White);
+  --first: var(--Pink);
+  --second: var(--Byzatine);
+  --third: var(--Purple);
 }
 
 .light {
   --bg: var(--LightModeBkg);
   --element: var(--White);
   --text: var(--LightModeText);
+  --first: var(--RoyalBlue);
+  --second: var(--CornFlowerBlue);
+  --third: var(--USAFABlue);
 }

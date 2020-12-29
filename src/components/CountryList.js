@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../components/Card'
+import CountryNotFound from '../components/CountryNotFound'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,7 +8,7 @@ const CountryList = ({ data, loading, error }) => {
   return (
     <>
       {error !== null ? (
-        <h1>Countries not found</h1>
+        <CountryNotFound />
       ) : (
         <>
           {' '}

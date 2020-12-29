@@ -1,0 +1,27 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--text);
+  height: 80vh;
+
+  &__img {
+    width: 300px;
+    @include respond(mobile) {
+      width: 90vw;
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+    background: -webkit-linear-gradient(
+      0deg,
+      var(--first),
+      var(--second),
+      var(--third)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

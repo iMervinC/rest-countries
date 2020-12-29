@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
 import { faMoon as Lfamoon } from '@fortawesome/free-regular-svg-icons'
+import { Link } from 'react-router-dom'
 
 class NavBar extends Component {
   constructor(props) {
@@ -41,7 +42,9 @@ class NavBar extends Component {
         <nav className="nav">
           <div className="container">
             <div className="nav__container">
-              <h1 className="nav__title">Where in the world?</h1>
+              <Link to="/" className="nav__title">
+                <h1>Where in the world?</h1>
+              </Link>
               {this.state.dark ? (
                 <FontAwesomeIcon
                   onClick={this.handleClick}

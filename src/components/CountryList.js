@@ -11,7 +11,6 @@ const CountryList = ({ data, loading, error }) => {
         <CountryNotFound />
       ) : (
         <>
-          {' '}
           {loading ? (
             <div className="container container-spinner">
               <FontAwesomeIcon

@@ -1,0 +1,19 @@
+.country {
+  display: grid;
+  column-gap: 150px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 400px;
+
+  @include respond(mobile) {
+    grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+  }
+
+  &__image {
+    height: auto;
+    width: 100%;
+  }
+
+  &__info {
+    color: var(--text);
+  }
+}

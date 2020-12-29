@@ -1,11 +1,10 @@
 .container-card {
-  margin-top: 48px;
-  margin-bottom: 48px;
-
   display: grid;
   gap: 75px;
 
-  //grid-template-columns: repeat(4, minmax(264px, 1fr));
+  margin-top: 48px;
+  margin-bottom: 48px;
+
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-template-rows: auto;
 }
@@ -17,6 +16,8 @@
   box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.37);
   transition: transform 200ms ease-in, filter 200ms ease-in,
     box-shadow 300ms ease-in;
+  text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     filter: brightness(1.2);

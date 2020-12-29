@@ -1,12 +1,13 @@
 import { useReducer } from 'react'
 import RestContext from './rest-context'
 import restReducer from './restReducer'
-import { FETCH_ALL, FETCH_REQUEST, FETCH_FAIL } from './rest-actions'
+import { FETCH_ALL, FETCH_REQUEST, FETCH_FAIL, FETCH_ONE } from './rest-actions'
 import axios from 'axios'
 
 const RestState = ({ children }) => {
   const initialState = {
     countries: [],
+    country: {},
     error: null,
     isLoading: true,
   }
@@ -48,16 +49,29 @@ const RestState = ({ children }) => {
       dispatch({ type: FETCH_FAIL, payload: error })
     }
   }
+  async function fetchCountry(country) {
+    try {
+      dispatch({ type: FETCH_REQUEST })
+      const { data } = await axios.get(
+        `https://restcountries.eu/rest/v2/name/${country}`
+      )
+      dispatch({ type: FETCH_ONE, payload: data[0] })
+    } catch (error) {
+      dispatch({ type: FETCH_FAIL, payload: error })
+    }
+  }
 
   return (
     <RestContext.Provider
       value={{
         countries: state.countries,
+        country: state.country,
         isLoading: state.isLoading,
         error: state.error,
         fetchAll,
         fetchByRegion,
         fetchBySearch,
+        fetchCountry,
       }}
     >
       {children}

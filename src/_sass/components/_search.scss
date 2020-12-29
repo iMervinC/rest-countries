@@ -7,6 +7,10 @@
   background: var(--element);
   width: 480px;
   border-radius: 5px;
+
+  @include respond(mobile) {
+    width: 100%;
+  }
   &__icon {
     color: var(--text);
     cursor: pointer;

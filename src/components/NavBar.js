@@ -37,32 +37,34 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className="nav">
-        <div className="container">
-          <div className="nav__container">
-            <h1 className="nav__title">Where in the world?</h1>
-            {this.state.dark ? (
-              <FontAwesomeIcon
-                onClick={this.handleClick}
-                id="moonIcon"
-                icon={faMoon}
-                className="nav__icon"
-              />
-            ) : (
-              <FontAwesomeIcon
-                onClick={this.handleClick}
-                id="moonIcon"
-                icon={Lfamoon}
-                className="nav__icon"
-              />
-            )}
+      <header>
+        <nav className="nav">
+          <div className="container">
+            <div className="nav__container">
+              <h1 className="nav__title">Where in the world?</h1>
+              {this.state.dark ? (
+                <FontAwesomeIcon
+                  onClick={this.handleClick}
+                  id="moonIcon"
+                  icon={faMoon}
+                  className="nav__icon"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  onClick={this.handleClick}
+                  id="moonIcon"
+                  icon={Lfamoon}
+                  className="nav__icon"
+                />
+              )}
 
-            <label onClick={this.handleClick} className="nav__label">
-              Dark Moon
-            </label>
+              <label onClick={this.handleClick} className="nav__label">
+                Dark Moon
+              </label>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
     )
   }
 }

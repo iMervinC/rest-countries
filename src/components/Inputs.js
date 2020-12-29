@@ -1,57 +1,57 @@
-import React, { Component } from 'react'
+import React, { useState, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import RestContext from '../context/rest-context'
 
-class Inputs extends Component {
-  constructor(props) {
-    super(props)
+const Inputs = () => {
+  const [search, setSearch] = useState('')
+  const { fetchByRegion, fetchBySearch } = useContext(RestContext)
 
-    this.state = { search: '' }
-
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state.search)
-    this.setState({ search: '' })
+    fetchBySearch(search)
   }
 
-  render() {
-    return (
-      <div className="container container-flex">
-        <div className="search">
-          <FontAwesomeIcon icon={faSearch} className="search__icon" />
-          <form onSubmit={(e) => this.handleSubmit(e)}>
-            <input
-              type="text"
-              placeholder="Search for a country..."
-              name="search"
-              id="search"
-              className="search__box"
-              value={this.state.search}
-              onChange={(e) => this.setState({ search: e.target.value })}
-            />
-          </form>
+  return (
+    <div className="container container-flex">
+      <div className="search">
+        <FontAwesomeIcon icon={faSearch} className="search__icon" />
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input
+            type="text"
+            placeholder="Search for a country..."
+            name="search"
+            id="search"
+            className="search__box"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value)
+              fetchBySearch(e.target.value)
+            }}
+          />
+        </form>
+      </div>
+      <div className="dropdown">
+        <div className="dropdown-select">
+          <span className="dropdown-select__label">Selected items</span>
+          <FontAwesomeIcon icon={faAngleDown} />
         </div>
-        <div className="dropdown">
-          <div className="dropdown-select">
-            <span className="dropdown-select__label">Selected items</span>
-            <FontAwesomeIcon icon={faAngleDown} />
-          </div>
-          <div className="dropdown-list">
-            {['Africa', 'America', 'Asia', 'Europe', 'Ocenia'].map(
-              (x, index) => (
-                <div key={index} className="dropdown-list__item">
-                  {x}
-                </div>
-              )
-            )}
-          </div>
+        <div className="dropdown-list">
+          {['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'].map(
+            (x, index) => (
+              <div
+                key={index}
+                className="dropdown-list__item"
+                onClick={() => fetchByRegion(x)}
+              >
+                {x}
+              </div>
+            )
+          )}
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Inputs

@@ -8,7 +8,7 @@ Live Demo Hosted @ [Vercel](https://rest-countries.imervinc.vercel.app)
 
 ## The challenge
 
-Your challenge is to integrate with the [REST Countries API](https://restcountries.eu{target="_blank"}) to pull country data and display it like in the designs.
+Your challenge is to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the designs.
 
 Your users should be able to:
 

@@ -4,7 +4,7 @@
 
 ## Welcome! 👋
 
-Live Demo @ [Live Demo](https://rest-countries.imervinc.vercel.app)
+Live Demo Hosted @ [Vercel](https://rest-countries.imervinc.vercel.app)
 
 ## The challenge
 

@@ -6,9 +6,19 @@
       @content;
     }
   }
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 1040px) {
+      @content;
+    }
+  }
 
   @if $breakpoint==mobile {
     @media only screen and (max-width: 675px) {
+      @content;
+    }
+  }
+  @if $breakpoint==mobileS {
+    @media only screen and (max-width: 375px) {
       @content;
     }
   }

@@ -1,19 +1,119 @@
+.back {
+  text-decoration: none;
+  color: var(--text);
+  background: var(--element);
+  border-radius: 5px;
+  margin: 80px 0;
+  padding: 15px 30px;
+  display: inline-block;
+  box-shadow: 0px 0px 46px 0px rgba(0, 0, 0, 0.37);
+  transition: all 200ms ease-in;
+
+  @include respond(mobile) {
+    margin: 20px 0;
+  }
+
+  &:hover {
+    background: var(--elementHover);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.37);
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
 .country {
   display: grid;
   column-gap: 150px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: 400px;
-
-  @include respond(mobile) {
-    grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+  @include respond(mobileS) {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   &__image {
-    height: auto;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+
+    &__content {
+      width: 100%;
+
+      @include respond(tablet) {
+        width: auto;
+        height: 100%;
+      }
+      @include respond(mobile) {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 
   &__info {
     color: var(--text);
+    display: grid;
+    grid-template-columns: 1fr 0.4fr 1fr;
+    grid-template-rows: 10fr 14fr 10fr;
+    grid-template-areas:
+      'title title title'
+      'info info info'
+      'borders borders borders';
+
+    &__title {
+      display: flex;
+      align-self: end;
+      color: var(--text);
+      font-weight: 900;
+      font-size: 33px;
+      grid-area: title;
+      margin-bottom: 20px;
+    }
+
+    &__details {
+      display: flex;
+      //align-items: center;
+      justify-content: space-between;
+      grid-area: info;
+
+      p {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      @include respond(mobile) {
+        flex-direction: column;
+      }
+
+      .col1 {
+        margin-right: 50px;
+      }
+    }
+
+    &__borders {
+      grid-area: borders;
+      margin-top: 10px;
+
+      &__title {
+        display: inline-block;
+        @include respond(mobile) {
+          display: block;
+        }
+      }
+      &__items {
+        display: inline-block;
+        text-decoration: none;
+        color: var(--text);
+        cursor: pointer;
+        background: var(--element);
+        padding: 5px 28px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.37);
+        margin: 0 5px 5px 5px;
+      }
+    }
   }
 }

@@ -1,8 +1,7 @@
 import React from 'react'
 import Card from '../components/Card'
 import CountryNotFound from '../components/CountryNotFound'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import Spinner from './Spinner'
 
 const CountryList = ({ data, loading, error }) => {
   return (
@@ -12,14 +11,7 @@ const CountryList = ({ data, loading, error }) => {
       ) : (
         <>
           {loading ? (
-            <div className="container container-spinner">
-              <FontAwesomeIcon
-                icon={faSpinner}
-                spin
-                className="spinner"
-                size="6x"
-              />
-            </div>
+            <Spinner />
           ) : (
             <div className="container container-card">
               {data.map((country) => (

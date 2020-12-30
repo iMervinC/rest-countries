@@ -17,6 +17,7 @@
 .dark {
   --bg: var(--DarkModeBG);
   --element: var(--DarkModeElements);
+  --elementHover: #354655;
   --text: var(--White);
   --first: var(--Pink);
   --second: var(--Byzatine);
@@ -26,6 +27,8 @@
 .light {
   --bg: var(--LightModeBkg);
   --element: var(--White);
+  --elementHover: #eeeeee;
+
   --text: var(--LightModeText);
   --first: var(--RoyalBlue);
   --second: var(--CornFlowerBlue);

@@ -18,7 +18,6 @@ const restReducer = (state, action) => {
       return {
         ...state,
         isLoading: false,
-        countries: [],
         country: { ...action.payload },
         error: null,
       }

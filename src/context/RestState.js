@@ -49,6 +49,7 @@ const RestState = ({ children }) => {
       dispatch({ type: FETCH_FAIL, payload: error })
     }
   }
+
   async function fetchCountry(country) {
     try {
       dispatch({ type: FETCH_REQUEST })
@@ -56,6 +57,18 @@ const RestState = ({ children }) => {
         `https://restcountries.eu/rest/v2/name/${country}`
       )
       dispatch({ type: FETCH_ONE, payload: data[0] })
+    } catch (error) {
+      dispatch({ type: FETCH_FAIL, payload: error })
+    }
+  }
+
+  async function fetchByCode(code) {
+    try {
+      dispatch({ type: FETCH_REQUEST })
+      const { data } = await axios.get(
+        `https://restcountries.eu/rest/v2/alpha/${code}`
+      )
+      dispatch({ type: FETCH_ONE, payload: data })
     } catch (error) {
       dispatch({ type: FETCH_FAIL, payload: error })
     }
@@ -72,6 +85,7 @@ const RestState = ({ children }) => {
         fetchByRegion,
         fetchBySearch,
         fetchCountry,
+        fetchByCode,
       }}
     >
       {children}

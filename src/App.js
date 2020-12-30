@@ -10,7 +10,7 @@ function App() {
       <RestState>
         <NavBar />
         <Switch>
-          <Route path="/country/:name" component={Details} />
+          <Route path="/country/:name" component={Details} exact />
           <Route path="/" component={HomePage} exact />
         </Switch>
       </RestState>

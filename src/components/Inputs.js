@@ -15,8 +15,13 @@ const Inputs = () => {
   return (
     <div className="container container-flex">
       <div className="search">
-        <FontAwesomeIcon icon={faSearch} className="search__icon" />
         <form onSubmit={(e) => handleSubmit(e)}>
+          <FontAwesomeIcon
+            icon={faSearch}
+            className="search__icon"
+            onClick={(e) => handleSubmit(e)}
+          />
+          <label htmlFor="search"></label>
           <input
             type="text"
             placeholder="Search for a country..."

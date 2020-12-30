@@ -9,6 +9,10 @@
   color: var(--text);
   border-radius: 5px;
 
+  form {
+    display: flex;
+  }
+
   @include respond(mobile) {
     width: 100%;
   }

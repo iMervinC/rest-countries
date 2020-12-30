@@ -1,8 +1,10 @@
 # REST Countries API with color theme switcher
+
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
+
 ## Welcome! 👋
 
-Live Demo @
+Live Demo @ [Live Demo](https://rest-countries.imervinc.vercel.app)
 
 ## The challenge
 

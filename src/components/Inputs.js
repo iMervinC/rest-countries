@@ -17,6 +17,7 @@ const Inputs = () => {
       <div className="search">
         <form onSubmit={(e) => handleSubmit(e)}>
           <FontAwesomeIcon
+            submit
             icon={faSearch}
             className="search__icon"
             onClick={(e) => handleSubmit(e)}
